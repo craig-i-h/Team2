@@ -60,6 +60,27 @@
                     templateUrl: "feature/item/item.html"
                 }
             }
-        })
+        }).state("home.asset",{
+            url: "/asset",
+            views:{
+                  "home-content":{
+                    templateUrl: "feature/asset/asset.html"
+                  }
+            }
+        }).state("home.assetadd",{
+                      url: "/asset/add",
+                      views:{
+                    "home-content":{
+                     templateUrl: "feature/asset/assetadd.html"
+                   }
+            }
+        }).state("home.assetamend",{
+                      url: "/asset/amend",
+                      views:{
+                            "home-content":{
+                              templateUrl: "feature/asset/assetamend.html"
+                            }
+                      }
+                  })
     });
 }());
