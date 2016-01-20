@@ -33,14 +33,14 @@ public abstract class GenericReadOnlyDao<T>
     }
 
     public List<T> list()
-    {
-        logger.info("Getting List of " + type.getSimpleName());
+        {
+            logger.info("Getting List of " + type.getSimpleName());
 
-        String query = "Select e from " + type.getSimpleName() + " e";
+            String query = "Select e from " + type.getSimpleName() + " e";
 
-        logger.info("List query " + query);
+            logger.info("List query " + query);
 
-        return getEntityManager().createQuery(query).getResultList();
+            return getEntityManager().createQuery(query).getResultList();
     }
 
     protected EntityManager getEntityManager()

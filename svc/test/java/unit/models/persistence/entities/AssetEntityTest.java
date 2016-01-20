@@ -6,10 +6,10 @@ import org.junit.Test;
 
 public class AssetEntityTest
 {
-    private AssetEntity assetEntity;
+    private static AssetEntity assetEntity;
 
     @BeforeClass
-    public void executedBeforeEach()
+    public static void executedBeforeEach()
     {
         assetEntity = new AssetEntity();
     }
@@ -33,7 +33,7 @@ public class AssetEntityTest
     public void testGetAssetType()
     {
         assetEntity.setAssetType("Computer");
-        assertEquals(assetEntity.getAssetOwner(), "Computer");
+        assertEquals(assetEntity.getAssetType(), "Computer");
     }
 
     @Test

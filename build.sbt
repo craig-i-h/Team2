@@ -16,7 +16,7 @@ lazy val svc = (project in file("svc"))
   .settings(Settings.basicSettings: _*)
   .settings(Settings.serviceSettings: _*)
   .settings(libraryDependencies ++= Seq(
-    javaJpa, hibernate, cache, javaWs, evolutions, jdbc, mockito
+    javaJpa, hibernate, cache, javaWs, evolutions, jdbc
   ) ++ Lib.test(
     junit, mockito
   ))
