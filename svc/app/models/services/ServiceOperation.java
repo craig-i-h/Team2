@@ -1,6 +1,7 @@
 package models.services;
 
 import com.fasterxml.jackson.databind.JsonNode;
+import play.Logger;
 
 public abstract class ServiceOperation
 {
