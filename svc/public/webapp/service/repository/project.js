@@ -7,7 +7,7 @@
 
     function ProjectRepo($q, $log, projectDal) {
 
-        var projectCache = [];
+        var projectCache = [];project.js
         console.log("This is project cache");
         /**
          *
