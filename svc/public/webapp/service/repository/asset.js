@@ -7,7 +7,7 @@
 
     function AssetRepo($q, $log, assetDal) {
 
-        var assetCache = [];asset.js
+        var assetCache = [];
         console.log("This is asset cache");
         /**
          *
