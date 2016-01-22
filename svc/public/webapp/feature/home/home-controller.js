@@ -46,7 +46,11 @@
 
          vm.navigateToAddAsset = function (){
                     $state.go("home.assetadd");
-                };
+         };
+
+         vm.navigateToAmendAsset = function (){
+             $state.go("home.assetamend");
+          };
 
 
         vm.logout = function () {

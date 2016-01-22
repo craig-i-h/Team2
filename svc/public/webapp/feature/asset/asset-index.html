@@ -7,6 +7,10 @@
         <div class="panel-heading">
             <button class="btn btn-danger btn-sm glyphicon glyphicon-remove" title="Delete this asset"
                     data-ng-click="assetItemCtrl.delete(asset)"></button>
+
+            <button class="btn btn-warning btn-sm glyphicon glyphicon-edit" title="Amend this asset"
+                    data-ng-click="homeCtrl.navigateToAmendAsset()"></button>
+
             ID:{{asset.id}} - {{asset.assetOwner}} -
             <small>Type: {{asset.assetType}}</small>
         </div>

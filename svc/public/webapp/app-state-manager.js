@@ -74,6 +74,13 @@
                      templateUrl: "feature/asset/asset-form.html"
                    }
             }
+        }).state("home.assetamend", {
+            url: "/asset/amend",
+            views:{
+            "home-content":{
+            templateUrl: "feature/asset/asset-amend.html"
+            }
+            }
         })
     });
 }());

@@ -44,6 +44,7 @@
             $log.debug("isUpdate = " + isUpdate);
             $log.debug(JSON.stringify(assetToSave));
 
+
             assetDal.saveAsset(assetToSave).then(function (asset) {
                 // Add newly created asset to cache
                 if (!isUpdate) {
