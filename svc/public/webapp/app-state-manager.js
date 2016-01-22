@@ -64,23 +64,16 @@
             url: "/asset",
             views:{
                   "home-content":{
-                    templateUrl: "feature/asset/asset.html"
+                    templateUrl: "feature/asset/asset-index.html"
                   }
             }
         }).state("home.assetadd",{
                       url: "/asset/add",
                       views:{
                     "home-content":{
-                     templateUrl: "feature/asset/assetadd.html"
+                     templateUrl: "feature/asset/asset-form.html"
                    }
             }
-        }).state("home.assetamend",{
-                      url: "/asset/amend",
-                      views:{
-                            "home-content":{
-                              templateUrl: "feature/asset/assetamend.html"
-                            }
-                      }
-                  })
+        })
     });
 }());

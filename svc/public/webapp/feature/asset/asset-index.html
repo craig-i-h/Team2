@@ -1,0 +1,15 @@
+<div class="container-fluid asset-results " data-ng-controller="assetController as assetCtrl">
+    <h3>Asset List - this page lists all the elements retrieved from repository</h3>
+    <hr>
+    <section data-ng-repeat="asset in assetCtrl.assets | orderBy:'id' track by $index"
+             data-ng-controller="assetItemController as assetItemCtrl " class="row panel panel-default">
+
+        <div class="panel-heading">
+            <button class="btn btn-danger btn-sm glyphicon glyphicon-remove" title="Delete this asset"
+                    data-ng-click="assetItemCtrl.delete(asset)"></button>
+            ID:{{asset.id}} - {{asset.assetOwner}} -
+            <small>Type: {{asset.assetType}}</small>
+        </div>
+        <div class="panel-body">{{asset.additional_information}}</div>
+    </section>
+</div>
