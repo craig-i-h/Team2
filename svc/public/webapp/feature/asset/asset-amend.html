@@ -4,11 +4,15 @@
           data-ng-submit="assetFormCtrl.saveAsset(assetForm)" method="post" novalidate="novalidate">
         <div class="row">
             <div class='form-group'>
-                <label for="id">ID :</label>
-                <input type="text" class="form-control" data-ng-model="assetFormCtrl.asset.id" placeholder="Asset ID"
-                       id="id"
-                       required>
+                <label for="id">Asset :</label>
+                <select data-ng-controller="assetController as assetCtrl" id="id" data-ng-model="assetFormCtrl.asset.id">
+                    <option data-ng-repeat="asset in assetCtrl.assets | orderBy:'id' track by $index"
+                            data-ng-controller="assetItemController as assetItemCtrl" value="{{asset.id}}">
+                        ID: {{asset.id}} - Owner: {{asset.assetOwner}} - Type: {{asset.assetType}}
+                    </option>
+                </select>
             </div>
+
 
             <div class='form-group'>
                 <label for="asset_owner">Owner :</label>

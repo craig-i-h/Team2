@@ -14,6 +14,11 @@
          * @param criteria
          * @returns {*}
          */
+
+         this.getAssetCache = function () {
+            return assetCache;
+         }
+
         this.getAssets = function (criteria) {
             $log.debug("Repository:Assets getAsset");
 
@@ -45,15 +50,26 @@
             $log.debug(JSON.stringify(assetToSave));
 
 
-            assetDal.saveAsset(assetToSave).then(function (asset) {
-                // Add newly created asset to cache
-                if (!isUpdate) {
-                    assetCache.push(asset);
-                }
-                deferred.resolve(asset);
-            }, function (error) {
-                deferred.reject(error);
-            });
+            if(isUpdate)
+            {
+                assetDal.updateAsset(assetToSave).then(function (asset) {
+                    deferred.resolve(asset);
+                }, function (error) {
+                    deferred.reject(error);
+                });
+            }
+            else
+            {
+                assetDal.saveAsset(assetToSave).then(function (asset) {
+                    // Add newly created asset to cache
+                    if (!isUpdate) {
+                        assetCache.push(asset);
+                    }
+                    deferred.resolve(asset);
+                }, function (error) {
+                    deferred.reject(error);
+                });
+            }
 
             return deferred.promise;
         };

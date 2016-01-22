@@ -16,7 +16,7 @@
         };
 
         this.updateAsset = function (assetToUpdate) {
-            return dal.http.PUT("asset/", assetToUpdate);
+            return dal.http.PUT("asset", assetToUpdate);
         };
 
         this.deleteAsset = function (assetToDelete) {

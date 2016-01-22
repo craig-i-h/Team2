@@ -13,6 +13,10 @@
 
         vm.asset = {};
 
+        vm.getAssetCache = function () {
+            return assetRepository.getAssetCache();
+        }
+
         vm.saveAsset = function (assetForm) {
             $log.debug("assetFormController: saveRequirement");
 

@@ -10,7 +10,7 @@
 GET         /project        controllers.resource.play.ProjectsEndpoint.list()
 GET         /project/:id    controllers.resource.play.ProjectsEndpoint.find(id: Long)
 POST        /project        controllers.resource.play.ProjectsEndpoint.create()
-PUT         /project        controllers.resource.play.ProjectsEndpoint.update()
+PUT         /project/        controllers.resource.play.ProjectsEndpoint.update()
 DELETE      /project/:id    controllers.resource.play.ProjectsEndpoint.delete(id: Long)
 
 GET         /item        controllers.resource.play.ItemEndpoint.list()
