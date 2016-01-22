@@ -2,30 +2,30 @@
 
 (function () {
     /**
-     * Manages individual projects within a ng-repeat set
+     * Manages individual assets within a ng-repeat set
      */
     angular.module('app')
-        .controller("project",
-        ["$state", "projectRepository", ProjectItemCtrl]);
+        .controller("asset",
+        ["$state", "assetRepository", AssetItemCtrl]);
 
-    function ProjectItemCtrl($state, projectRepository) {
+    function AssetItemCtrl($state, assetRepository) {
         var vm = this;
         // name constant - for trace and debugging
-        vm.controllerName = "projectItemController";
+        vm.controllerName = "assetItemController";
 
-        vm.delete = function (project) {
+        vm.delete = function (asset) {
             var waitingDialog;
             BootstrapDialog.confirm({
-                message: 'Are you sure that you want to delete this project?',
+                message: 'Are you sure that you want to delete this asset?',
                 type: BootstrapDialog.TYPE_WARNING,
                 btnOKLabel: 'Delete!',
                 btnOKClass: 'btn-warning',
                 callback: function (confirmed) {
                     if (confirmed) {
                         waitingDialog = BootstrapDialog.show({
-                            message: 'Please wait - Deleting project'
+                            message: 'Please wait - Deleting asset'
                         });
-                        projectRepository.deleteProject(project).then(function () {
+                        assetRepository.deleteAsset(asset).then(function () {
                             waitingDialog.close();
                         }, function (error) {
                             // TODO error
@@ -35,7 +35,7 @@
             })
         };
 
-        vm.amend = function (project) {
+        vm.amend = function (asset) {
            //TODO amend
         };
     }
